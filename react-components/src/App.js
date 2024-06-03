@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Banner from "./components/Banner";
+import Gallery from "./components/Gallery";
+import Footer from "./components/Footer";
 
 function App() {
+  const title = "My Portfolio";
+  const home = "Home";
+  const about = "About";
+  const projects = "Projects";
+  const contact = "Contact";
+
+  const bannerTitle = "Welcome to My Portfolio";
+  const bannerSubtitle = "Showcasing My Work and Projects";
+
+  const projectImages = [
+    "./react-components/src/img/calulator app.png",
+    "./react-components/src/img/random-quote-machine.png",
+    "./react-components/src/img/tic-tac-toe.png",
+    "./react-components/src/img/wikipedia viewer.png"
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header title={title} home={home} about={about} projects={projects} contact={contact} />
+      <Banner title={bannerTitle} subtitle={bannerSubtitle} />
+      <Gallery images={projectImages} />
+      <Footer />
+    </>
   );
 }
 
